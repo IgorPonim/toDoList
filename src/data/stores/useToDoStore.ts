@@ -34,14 +34,26 @@ export const useToDostore = create<ToDoStore>((set, get) => ({
         set({
             tasks: [newTask].concat(tasks)
         })
-
     },
 
     //метод обновления тасочки
     updateTask: (id: string, title: string) => {
-
-
+        const { tasks } = get()
+        set({
+            tasks: tasks.map((task) => ({///обновляем тасочки через мап, возвращаем новый обьект
+                ...task,
+                title: task.id === id ? title : task.title
+            })
+            )
+        })
+    },
+    removeTask: (id: string) => {
+        const { tasks } = get()
+        set({
+            tasks: tasks.filter((task) => {
+                task.id !== id
+            })
+        })
 
     },
-    removeTask: (id) => { },
 }));
