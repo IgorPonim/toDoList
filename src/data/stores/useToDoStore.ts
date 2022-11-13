@@ -22,12 +22,12 @@ interface ToDoStore {
 
 export const useToDostore = create<ToDoStore>((set, get) => ({
     tasks: [{
-        id: '1',
+        id: '1asdasd',
         title: 'Дефолтная тасочка',
         createdAt: Number(new Date()),
     },
     {
-        id: '2',
+        id: '2asdasda',
         title: 'Еще одна дефолтная тасочка',
         createdAt: Number(new Date()),
     }],
@@ -59,9 +59,9 @@ export const useToDostore = create<ToDoStore>((set, get) => ({
     removeTask: (id: string) => {
         const { tasks } = get()
         set({
-            tasks: tasks.filter((task) => {
+            tasks: tasks.filter((task) =>
                 task.id !== id
-            })
+            )
         })
 
     },
