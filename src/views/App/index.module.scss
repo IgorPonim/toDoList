@@ -4,9 +4,17 @@
     border-radius: 20px;
     padding: 20px 55px;
 
+    &Section {
+        padding-bottom: 5px;
+    }
+
     &Title {
         font-size: 40px;
         margin-bottom: 0.3em;
+        text-align: center;
+    }
+
+    &Text {
         text-align: center;
     }
 }
