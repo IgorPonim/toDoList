@@ -18,6 +18,7 @@
         width: 20px;
         height: 20px;
         background: #ccc;
+        cursor: pointer;
     }
 
     &Title {
@@ -26,7 +27,8 @@
     }
 
     &Edit,
-    &Remove {
+    &Remove,
+    &Save {
         display: block;
         height: 100%;
         border: none;
@@ -41,8 +43,13 @@
         background-image: url('./edit.svg');
     }
 
-    &Remove {
+    &Remove,
+    &Save {
         background-image: url('./check.svg');
+    }
+
+    &Remove {
+        background-image: url('./trash.svg');
     }
 
     &Edit:hover,
@@ -50,4 +57,15 @@
         scale: 1.1;
         color: red;
     }
+
+    &TitleEdit {}
+}
+
+
+.InputTaskTitleEdit {
+    font: 1rem/1em 'Roboto';
+    border: none;
+    padding: 5px;
+    background: none;
+    box-shadow: 0 4px 0 -3px #3f72af;
 }

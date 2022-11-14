@@ -24,8 +24,8 @@ const App: React.FC = () => {
 
             </section>
             <section className={styles.articleSection}>
-                {!task.length && <p className={styles.articleText}>there is no tasks</p>}
-                {task.map((task) => { return <InputTask title={task.title} id={task.id} onDone={removeTask} onRemoved={removeTask} key={task.id} /> })}
+                {!task.length && <p className={styles.articleText}>Больше нет задач..</p>}
+                {task.map((task) => { return <InputTask title={task.title} id={task.id} onDone={removeTask} onRemoved={removeTask} key={task.id} onEdited={updateTask} /> })}
             </section>
         </ article >
     );
