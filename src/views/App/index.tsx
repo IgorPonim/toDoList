@@ -9,7 +9,6 @@ const App: React.FC = () => {
 
 
 
-    console.log(task)
     return (
         <article className={styles.article}>
             <h1 className={styles.articleTitle}>To Do List</h1>
