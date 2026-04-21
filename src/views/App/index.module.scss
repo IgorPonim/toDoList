@@ -17,4 +17,34 @@
     &Text {
         text-align: center;
     }
+
+    // Адаптация для планшетов и телефонов
+    @media (max-width: 768px) {
+        min-width: auto;          // Убираем фиксированную ширину
+        width: 90%;               // Занимаем 90% экрана
+        margin: 0 auto;           // Центрируем
+        padding: 15px 20px;       // Уменьшаем отступы
+
+        &Title {
+            font-size: 28px;      // Шрифт поменьше для мобилок
+        }
+
+        &Text {
+            font-size: 14px;      // Текст чуть мельче, но читаемый
+        }
+    }
+
+    // Для совсем маленьких телефонов (до 480px)
+    @media (max-width: 480px) {
+        padding: 12px 15px;
+        width: 95%;
+
+        &Title {
+            font-size: 24px;
+        }
+
+        &Text {
+            font-size: 13px;
+        }
+    }
 }

@@ -31,7 +31,7 @@ export const InputPlus: React.FC<InputPlusProps> = ({ onAdd }) => {
                         addTask()
                     }
                 }}
-                placeholder="Введи тасочку"
+                placeholder="Что нужно сделать/купить"
             />
             <button
                 onClick={() => { addTask() }}
