@@ -3,8 +3,8 @@ import { registerSW } from 'virtual:pwa-register'
 
 import App from './views/App'
 import ReactDOM from 'react-dom';
-import './views/styles/reset.scss'
 import './views/styles/common.scss'
+import './views/styles/reset.scss'
 
 registerSW({ immediate: true })
 
