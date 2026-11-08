@@ -44,11 +44,9 @@ const App: React.FC = () => {
 
     return (
         <article className={styles.article}>
-            {!isInstalled && <div className={styles.installBanner}>
-                {installPrompt ? <>
-                    <span>Добавьте список на главный экран — он будет работать без интернета.</span>
-                    <button className={styles.installButton} onClick={installApp}>Установить приложение</button>
-                </> : <span>Чтобы установить: откройте меню браузера и выберите «Добавить на главный экран».</span>}
+            {!isInstalled && installPrompt && <div className={styles.installBanner}>
+                <span>Добавьте список на главный экран — он будет работать без интернета.</span>
+                <button className={styles.installButton} onClick={installApp}>Установить приложение</button>
             </div>}
             <h1 className={styles.articleTitle}>Список дел/покупок</h1>
             <section className={styles.articleSection}>
