@@ -1,37 +1,52 @@
 .inputPlus {
-    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 45px;
+    grid-template-columns: minmax(0, 1fr) 54px;
+    width: 100%;
+    gap: 10px;
 
     &Value {
-        border: 1px solid #b1b1b1;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        padding: 9px 10px;
-        font: 1rem/1.4, 'Roboto';
-        background: #dbe2ef;
+        min-width: 0;
+        height: 54px;
+        border: 1px solid #e2eae4;
+        border-radius: 15px;
+        padding: 0 17px;
+        background: #f7f9f7;
+        color: #243a30;
+        font-size: 15px;
+        transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 
         &::placeholder {
-            color: grey;
+            color: #9aa9a0;
+        }
+
+        &:focus {
+            border-color: #78ad8e;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(87, 153, 112, 0.12);
         }
     }
 
-    &Value:focus {
-        outline-width: 0;
-        outline: none;
-    }
-
     &Button {
-        border-radius: none;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        border: none;
+        display: grid;
+        width: 54px;
+        height: 54px;
+        place-items: center;
+        border: 0;
+        border-radius: 15px;
+        background: #287456 url('./images/plus.svg') no-repeat center;
+        box-shadow: 0 4px 10px rgba(40, 116, 86, 0.2);
         cursor: pointer;
-        background: #3f72af url('./images/plus.svg') no-repeat center;
-        transition: .3s
-    }
+        transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 
-    &button:hover {
-        opacity: .9;
+        &:hover {
+            transform: translateY(-1px);
+            background-color: #205f46;
+            box-shadow: 0 6px 14px rgba(40, 116, 86, 0.24);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
     }
 }

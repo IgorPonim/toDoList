@@ -1,80 +1,85 @@
 .article {
-    min-width: 600px;
+    width: min(100%, 680px);
+    padding: clamp(24px, 5vw, 44px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 24px 70px rgba(37, 66, 51, 0.11), 0 3px 10px rgba(37, 66, 51, 0.04);
+    backdrop-filter: blur(12px);
+
+    &Title {
+        margin: 0 0 26px;
+        color: #1d382d;
+        font-size: clamp(28px, 5vw, 38px);
+        font-weight: 750;
+        letter-spacing: -0.045em;
+        line-height: 1.12;
+        text-align: center;
+    }
+
+    &Section {
+        padding-bottom: 10px;
+    }
+
+    &Text {
+        margin: 28px 0 10px;
+        color: #829188;
+        font-size: 15px;
+        text-align: center;
+    }
 
     &InstallBanner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 18px;
-        padding: 12px 14px;
-        border-radius: 12px;
-        background: #fff4e5;
-        color: #51330b;
-        font-size: 14px;
+        gap: 14px;
+        margin: -6px 0 24px;
+        padding: 13px 15px;
+        border: 1px solid #dcece1;
+        border-radius: 16px;
+        background: #f1f8f3;
+        color: #456153;
+        font-size: 13px;
+        line-height: 1.45;
     }
 
     &InstallButton {
         flex: 0 0 auto;
         border: 0;
-        border-radius: 9px;
-        padding: 10px 14px;
-        background: #ff9500;
-        color: white;
-        font-weight: 700;
+        border-radius: 11px;
+        padding: 10px 15px;
+        background: #287456;
+        box-shadow: 0 3px 8px rgba(40, 116, 86, 0.18);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 650;
         cursor: pointer;
-    }
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px 55px;
+        transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 
-    &Section {
-        padding-bottom: 5px;
-    }
+        &:hover {
+            transform: translateY(-1px);
+            background: #205f46;
+            box-shadow: 0 5px 12px rgba(40, 116, 86, 0.23);
+        }
 
-    &Title {
-        font-size: 40px;
-        margin-bottom: 0.3em;
-        text-align: center;
+        &:active {
+            transform: translateY(0);
+        }
     }
 
-    &Text {
-        text-align: center;
-    }
-
-    // Адаптация для планшетов и телефонов
-    @media (max-width: 768px) {
-        min-width: auto;          // Убираем фиксированную ширину
-        width: 90%;               // Занимаем 90% экрана
-        margin: 0 auto;           // Центрируем
-        padding: 15px 20px;       // Уменьшаем отступы
+    @media (max-width: 560px) {
+        padding: 23px 18px;
+        border-radius: 22px;
 
         &Title {
-            font-size: 28px;      // Шрифт поменьше для мобилок
+            margin-bottom: 22px;
+            font-size: 29px;
         }
 
         &InstallBanner {
             flex-direction: column;
             align-items: stretch;
             text-align: center;
-        }
-
-        &Text {
-            font-size: 14px;      // Текст чуть мельче, но читаемый
-        }
-    }
-
-    // Для совсем маленьких телефонов (до 480px)
-    @media (max-width: 480px) {
-        padding: 12px 15px;
-        width: 95%;
-
-        &Title {
-            font-size: 24px;
-        }
-
-        &Text {
-            font-size: 13px;
         }
     }
 }
